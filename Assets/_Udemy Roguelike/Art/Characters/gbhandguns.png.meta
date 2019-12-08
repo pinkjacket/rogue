@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: 88c218a846658ba4282c0d74c68646fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4327919172595999565
+    second: gbhandguns_0
+  - first:
+      213: -2375271806874953420
+    second: gbhandguns_1
+  - first:
+      213: -3195372923437993779
+    second: gbhandguns_2
+  - first:
+      213: -8263314060926975015
+    second: gbhandguns_3
+  - first:
+      213: -5505348305471028031
+    second: gbhandguns_4
+  - first:
+      213: 7249239353600914506
+    second: gbhandguns_5
+  - first:
+      213: 7596784719034114984
+    second: gbhandguns_6
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gbhandguns_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 116
+        width: 18
+        height: 11
+      alignment: 9
+      pivot: {x: 0.1408803, y: 0.2234594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f083c05c20ebfff4cb7c913f46d9d156
+      internalID: 4327919172595999565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gbhandguns_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 99
+        width: 30
+        height: 11
+      alignment: 9
+      pivot: {x: 0.2486162, y: 0.211937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738f38ccfa9cf8e4d8a37bcfc5aea198
+      internalID: -2375271806874953420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gbhandguns_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 81
+        width: 20
+        height: 11
+      alignment: 9
+      pivot: {x: 0.1736235, y: 0.3098783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a576cf834b9b6e4f9217dadbc03c7f1
+      internalID: -3195372923437993779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gbhandguns_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 62
+        width: 19
+        height: 13
+      alignment: 9
+      pivot: {x: 0.1864651, y: 0.2660035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f07a650ca8e3f4dbf31930417fb629
+      internalID: -8263314060926975015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gbhandguns_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 46
+        width: 28
+        height: 10
+      alignment: 9
+      pivot: {x: 0.2329235, y: 0.3479023}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7026993508e73524f94780e12eabae5f
+      internalID: -5505348305471028031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gbhandguns_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 26
+        width: 30
+        height: 14
+      alignment: 9
+      pivot: {x: 0.185242, y: 0.2419769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e926448c09a3a14b84feeb124a44da8
+      internalID: 7249239353600914506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gbhandguns_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5190121}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 387a2a30277ef1044b9832c0dc235938
+      internalID: 7596784719034114984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
