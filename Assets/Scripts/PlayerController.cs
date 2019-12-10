@@ -8,11 +8,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     public Rigidbody2D playerRB;
     public Transform gunArm;
+    private Camera mainCam;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainCam = Camera.main;
     }
 
     // Update is called once per frame
@@ -26,7 +27,18 @@ public class PlayerController : MonoBehaviour
         playerRB.velocity = moveInput * moveSpeed;
 
         Vector3 mousePos = Input.mousePosition;
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);
+        Vector3 screenPoint = mainCam.WorldToScreenPoint(transform.localPosition);
+
+        //flip player to face the way they're aiming
+        if(mousePos.x < screenPoint.x)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+            gunArm.localScale = new Vector3(-1f, -1f, 1f);
+        } else
+        {
+            transform.localScale = Vector3.one;
+            gunArm.localScale = Vector3.one;
+        }
 
         //formula to rotate gun arm
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
