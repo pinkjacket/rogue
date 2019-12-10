@@ -576,6 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   playerRB: {fileID: 1507803864}
+  gunArm: {fileID: 979982480}
 --- !u!50 &1507803864
 Rigidbody2D:
   serializedVersion: 4
