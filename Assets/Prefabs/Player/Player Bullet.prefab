@@ -145,3 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7.5
   bulRB: {fileID: 8291424961472597930}
+  impactEffect: {fileID: 2106194959612774355, guid: 7074b8546e6ac91438879bd4cb52d29f,
+    type: 3}
