@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public GameObject bulletToShoot;
     public Transform firePoint;
+    public float shotDelay;
+    private float shotDelayCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,15 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0)) {
             Instantiate(bulletToShoot, firePoint.position, firePoint.rotation);
+            shotDelayCounter = shotDelay;
+        }
+
+        if (Input.GetMouseButton(0)) {
+            shotDelayCounter -= Time.deltaTime;
+            if(shotDelayCounter <= 0) {
+                Instantiate(bulletToShoot, firePoint.position, firePoint.rotation);
+                shotDelayCounter = shotDelay;
+            }
         }
 
         if(moveInput != Vector2.zero)
