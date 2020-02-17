@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public Transform gunArm;
     private Camera mainCam;
     public Animator anim;
+    public GameObject bulletToShoot;
+    public Transform firePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +48,10 @@ public class PlayerController : MonoBehaviour
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         gunArm.rotation = Quaternion.Euler(0, 0, angle);
+
+        if (Input.GetMouseButtonDown(0)) {
+            Instantiate(bulletToShoot, firePoint.position, firePoint.rotation);
+        }
 
         if(moveInput != Vector2.zero)
         {
