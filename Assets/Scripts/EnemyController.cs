@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed;
     public float attentionRange;
     private Vector3 moveDirection;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,12 @@ public class EnemyController : MonoBehaviour
         moveDirection.Normalize();
 
         enRB.velocity = moveDirection * moveSpeed;
+
+        if (moveDirection != Vector3.zero) {
+            anim.SetBool("isMoving", true);
+        }
+        else {
+            anim.SetBool("isMoving", false);
+        }
     }
 }
