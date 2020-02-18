@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 moveDirection;
     public Animator anim;
     public int health = 150;
+    public GameObject[] deathEffects;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,13 @@ public class EnemyController : MonoBehaviour
 
         if(health <= 0) {
             Destroy(gameObject);
+
+            int selectedEffect = Random.Range(0, deathEffects.Length);
+            int rotation = Random.Range(0, 4);
+
+            Instantiate(deathEffects[selectedEffect], transform.position, Quaternion.Euler(0f, 0f, rotation * 90f));
+
+            //Instantiate(deathEffects, transform.position, transform.rotation);
         }
     }
 }
