@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public Animator anim;
     public int health = 150;
     public GameObject[] deathEffects;
+    public GameObject hitEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class EnemyController : MonoBehaviour
 
     public void DamageEnemy(int damage) {
         health -= damage;
+        Instantiate(hitEffect, transform.position, transform.rotation);
 
         if(health <= 0) {
             Destroy(gameObject);

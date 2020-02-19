@@ -212,9 +212,10 @@ GameObject:
   - component: {fileID: 302088898}
   - component: {fileID: 302088901}
   - component: {fileID: 302088900}
+  - component: {fileID: 302088902}
   m_Layer: 0
   m_Name: Enemy Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,7 +281,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &302088901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +297,34 @@ MonoBehaviour:
   enRB: {fileID: 302088900}
   moveSpeed: 3
   attentionRange: 7
+  anim: {fileID: 302088902}
+  health: 150
+  deathEffects:
+  - {fileID: 6387205647681697285, guid: 8adab89514959e249b85cd61145071ed, type: 3}
+  - {fileID: 3865293446172466569, guid: f9d76f6345374ba4ba7e16ac6ee487a2, type: 3}
+  - {fileID: 4055616852038067911, guid: 966261bf29573a24fb5c385e247299f2, type: 3}
+  - {fileID: 726072780788849758, guid: b6e35825fc22e1a459794d790cf20c3d, type: 3}
+  hitEffect: {fileID: 7342101821924625799, guid: 06b14355a616a3742853212eb98cbf26,
+    type: 3}
+--- !u!95 &302088902
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302088897}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7add39db34c9674d83cc62fe8267dcd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &395480526
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,7 +777,7 @@ GameObject:
   - component: {fileID: 1507803866}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
