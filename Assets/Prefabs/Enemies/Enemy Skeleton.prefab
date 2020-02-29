@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 81246482849954385}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8772555176436608361}
   - component: {fileID: 8772555176436608360}
   - component: {fileID: 8772555176436608362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -120,6 +120,8 @@ MonoBehaviour:
   bullet: {fileID: 881862530216365497, guid: 6faac1ac26c36fd4ab61689df076cf43, type: 3}
   firePoint: {fileID: 81246482849954385}
   fireRate: 1
+  theBody: {fileID: 8772555176530125436}
+  shootingRange: 10
 --- !u!50 &8772555176436608360
 Rigidbody2D:
   serializedVersion: 4
@@ -170,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8772555176530125411}
   - component: {fileID: 8772555176530125436}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

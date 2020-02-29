@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
     public Transform firePoint;
     public float fireRate;
     private float fireCount;
+    public SpriteRenderer theBody;
+    public float shootingRange;
 
     // Start is called before the first frame update
     void Start()
@@ -27,30 +29,33 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, PlayerController.instance.transform.position) < attentionRange) {
-            moveDirection = PlayerController.instance.transform.position - transform.position;
-        } else {
-            moveDirection = Vector3.zero;
-        }
-        moveDirection.Normalize();
+        if(theBody.isVisible){
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < attentionRange) {
+                moveDirection = PlayerController.instance.transform.position - transform.position;
+            }
+            else {
+                moveDirection = Vector3.zero;
+            }
+            moveDirection.Normalize();
 
-        enRB.velocity = moveDirection * moveSpeed;
+            enRB.velocity = moveDirection * moveSpeed;
+
+            if (doesShoot && Vector3.Distance(transform.position, PlayerController.instance.transform.position) < shootingRange){
+                fireCount -= Time.deltaTime;
+
+                if (fireCount <= 0) {
+                    fireCount = fireRate;
+                    Instantiate(bullet, firePoint.position, firePoint.rotation);
+
+                }
+            }
+        }
 
         if (moveDirection != Vector3.zero) {
             anim.SetBool("isMoving", true);
         }
         else {
             anim.SetBool("isMoving", false);
-        }
-
-        if (doesShoot) {
-            fireCount -= Time.deltaTime;
-
-            if(fireCount <= 0) {
-                fireCount = fireRate;
-                Instantiate(bullet, firePoint.position, firePoint.rotation);
-
-            }
         }
     }
 
