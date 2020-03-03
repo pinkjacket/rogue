@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public Transform firePoint;
     public float shotDelay;
     private float shotDelayCounter;
+    public SpriteRenderer bodySR;
 
     private void Awake() {
         instance = this;

@@ -792,6 +792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 5
+  invulnLength: 1
 --- !u!4 &806054751
 Transform:
   m_ObjectHideFlags: 0
@@ -1555,6 +1556,7 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 478440888}
   shotDelay: 0.2
+  bodySR: {fileID: 1220689050}
 --- !u!50 &1507803864
 Rigidbody2D:
   serializedVersion: 4
