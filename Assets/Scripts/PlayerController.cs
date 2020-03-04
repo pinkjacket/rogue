@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour
     public float shotDelay;
     private float shotDelayCounter;
     public SpriteRenderer bodySR;
+    private float activeMoveSpeed;
+    public float dashSpeed = 8f;
+    public float dashLength = .5f;
+    public float dashCoolOff = 1f;
+    public float dashInvuln = .5f;
+    private float dashCounter, dashCoolCounter;
 
     private void Awake() {
         instance = this;
@@ -26,6 +32,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         mainCam = Camera.main;
+        activeMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -37,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         //transform.position += new Vector3(moveInput.x * Time.deltaTime * moveSpeed, moveInput.y * Time.deltaTime * moveSpeed, 0f);
 
-        playerRB.velocity = moveInput * moveSpeed;
+        playerRB.velocity = moveInput * activeMoveSpeed;
 
         Vector3 mousePos = Input.mousePosition;
         Vector3 screenPoint = mainCam.WorldToScreenPoint(transform.localPosition);
@@ -69,6 +76,25 @@ public class PlayerController : MonoBehaviour
                 Instantiate(bulletToShoot, firePoint.position, firePoint.rotation);
                 shotDelayCounter = shotDelay;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (dashCoolCounter <= 0 && dashCounter <= 0) {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+            }
+        }
+
+        if(dashCounter > 0) {
+            dashCounter -= Time.deltaTime;
+            if(dashCounter <= 0) {
+                activeMoveSpeed = moveSpeed;
+                dashCoolCounter = dashCoolOff;
+            }
+        }
+
+        if(dashCoolCounter > 0) {
+            dashCoolCounter -= Time.deltaTime;
         }
 
         if(moveInput != Vector2.zero)
