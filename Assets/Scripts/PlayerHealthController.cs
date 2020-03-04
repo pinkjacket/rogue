@@ -51,4 +51,9 @@ public class PlayerHealthController : MonoBehaviour
             UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
         }
     }
+
+    public void TempInvulnerability(float length) {
+        invulnCount = length;
+        PlayerController.instance.bodySR.color = new Color(PlayerController.instance.bodySR.color.r, PlayerController.instance.bodySR.color.g, PlayerController.instance.bodySR.color.b, .5f);
+    }
 }

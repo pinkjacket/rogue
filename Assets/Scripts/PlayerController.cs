@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
                 dashCounter = dashLength;
 
                 anim.SetTrigger("dash");
+
+                PlayerHealthController.instance.TempInvulnerability(dashInvuln);
             }
         }
 
