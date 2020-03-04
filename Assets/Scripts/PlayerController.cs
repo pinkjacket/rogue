@@ -82,6 +82,8 @@ public class PlayerController : MonoBehaviour
             if (dashCoolCounter <= 0 && dashCounter <= 0) {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
+
+                anim.SetTrigger("dash");
             }
         }
 
