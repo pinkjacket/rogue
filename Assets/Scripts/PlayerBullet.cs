@@ -22,6 +22,7 @@ public class PlayerBullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        //this is where to deal with bullets impacting different things
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
 
