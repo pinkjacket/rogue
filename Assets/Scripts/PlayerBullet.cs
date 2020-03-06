@@ -23,8 +23,11 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         //this is where to deal with bullets impacting different things
-        Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
+        //give "Flyover" tag to anything you want bullets to pass over
+        if (other.tag != "Flyover") {
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
 
         if(other.tag == "Enemy") {
             other.GetComponent<EnemyController>().DamageEnemy(bulletDamage);

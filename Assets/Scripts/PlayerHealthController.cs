@@ -56,4 +56,13 @@ public class PlayerHealthController : MonoBehaviour
         invulnCount = length;
         PlayerController.instance.bodySR.color = new Color(PlayerController.instance.bodySR.color.r, PlayerController.instance.bodySR.color.g, PlayerController.instance.bodySR.color.b, .5f);
     }
+
+    public void HealPlayer(int healthBoost) {
+        currentHealth += healthBoost;
+        if(currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
+        UIController.instance.healthSlider.value = currentHealth;
+        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+    }
 }
