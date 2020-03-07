@@ -70,12 +70,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             Instantiate(bulletToShoot, firePoint.position, firePoint.rotation);
             shotDelayCounter = shotDelay;
+            AudioManager.instance.PlaySFX(12);
         }
 
         if (Input.GetMouseButton(0)) {
             shotDelayCounter -= Time.deltaTime;
             if(shotDelayCounter <= 0) {
                 Instantiate(bulletToShoot, firePoint.position, firePoint.rotation);
+                AudioManager.instance.PlaySFX(12);
                 shotDelayCounter = shotDelay;
             }
         }
@@ -86,6 +88,7 @@ public class PlayerController : MonoBehaviour
                 dashCounter = dashLength;
 
                 anim.SetTrigger("dash");
+                AudioManager.instance.PlaySFX(8);
 
                 PlayerHealthController.instance.TempInvulnerability(dashInvuln);
             }

@@ -23,6 +23,7 @@ public class Breakables : MonoBehaviour {
         if (other.tag == "Player") {
             if (PlayerController.instance.dashCounter > 0) {
                 Destroy(gameObject);
+                AudioManager.instance.PlaySFX(0);
 
                 //show broken crate bits
                 int piecesDropped = Random.Range(1, maxPieces);

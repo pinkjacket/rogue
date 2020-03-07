@@ -24,6 +24,7 @@ public class HealthPack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player" && pickUpDelay <= 0) {
             PlayerHealthController.instance.HealPlayer(healBy);
+            AudioManager.instance.PlaySFX(7);
             Destroy(gameObject);
         }
     }
