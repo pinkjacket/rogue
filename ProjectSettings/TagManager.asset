@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Flyover
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - Player Bullets
   - Enemies
   - Enemy Bullets
-  - 
-  - 
-  - 
+  - Breakable
+  - BulletPass
+  - Pickups
   - 
   - 
   - 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3967590506329025201}
   - component: {fileID: 3967590506329025200}
   - component: {fileID: 3967590506329025203}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Blue Health Pack
   m_TagString: Flyover
   m_Icon: {fileID: 0}
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healBy: 3
+  pickUpDelay: 0.5
 --- !u!61 &3967590506329025203
 BoxCollider2D:
   m_ObjectHideFlags: 0

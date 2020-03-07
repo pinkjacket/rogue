@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7365335731066586262}
   - component: {fileID: 7365335731066586263}
   - component: {fileID: 7365335731066586260}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Spikes
-  m_TagString: Untagged
+  m_TagString: Flyover
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

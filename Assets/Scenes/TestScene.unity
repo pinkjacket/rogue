@@ -5340,11 +5340,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
-    - target: {fileID: 7365335731066586261, guid: a58725ea39160d441adf4b5aa195e4e2,
-        type: 3}
-      propertyPath: m_TagString
-      value: Flyover
-      objectReference: {fileID: 0}
     - target: {fileID: 7365335731066586265, guid: a58725ea39160d441adf4b5aa195e4e2,
         type: 3}
       propertyPath: m_LocalPosition.x
