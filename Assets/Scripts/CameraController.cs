@@ -8,6 +8,10 @@ public class CameraController : MonoBehaviour
     public float cameraSpeed;
     public Transform target;
 
+    private void Awake() {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +24,9 @@ public class CameraController : MonoBehaviour
         if(target != null) {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, target.position.y, transform.position.z), cameraSpeed * Time.deltaTime);
         }       
+    }
+
+    public void ChangeTarget(Transform newTarget) {
+        target = newTarget;
     }
 }
