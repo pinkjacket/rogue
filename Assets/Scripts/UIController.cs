@@ -9,6 +9,9 @@ public class UIController : MonoBehaviour
     public Slider healthSlider;
     public Text healthText;
     public GameObject deathScreen;
+    public Image fadeScreen;
+    public float fadeSpeed;
+    private bool fadeToBlack, fadeFromBlack;
 
     private void Awake() {
         instance = this;
@@ -16,12 +19,29 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        fadeFromBlack = true;
+        fadeToBlack = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (fadeFromBlack) {
+            fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
+            if (fadeScreen.color.a == 0f) {
+                fadeFromBlack = false;
+            }
+        }
+
+        if (fadeToBlack) {
+            fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
+            if (fadeScreen.color.a == 1f) {
+                fadeToBlack = false;
+            }
+        }
+    }
+    public void StartFadeToBlack() {
+        fadeToBlack = true;
+        fadeFromBlack = false;
     }
 }
