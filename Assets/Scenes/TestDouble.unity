@@ -4318,6 +4318,7 @@ GameObject:
   - component: {fileID: 806054751}
   - component: {fileID: 806054750}
   - component: {fileID: 806054752}
+  - component: {fileID: 806054753}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -4393,6 +4394,20 @@ MonoBehaviour:
   - {fileID: 531591244}
   - {fileID: 405043689}
   - {fileID: 860957203}
+--- !u!114 &806054753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806054749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb341fff5ddcef1438dc9937b46db6f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferDelay: 3
+  nextLevelName: Victory
 --- !u!1001 &829979899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10879,6 +10894,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855533803150387009, guid: 3b0c83294e8a72845932e14e88d5d92f,
+        type: 3}
+      propertyPath: nextLevel
+      value: Victory
       objectReference: {fileID: 0}
     - target: {fileID: 7297440056368718594, guid: 3b0c83294e8a72845932e14e88d5d92f,
         type: 3}
