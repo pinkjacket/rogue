@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     public float fadeSpeed;
     private bool fadeToBlack, fadeFromBlack;
     public string newGameScene, mainMenuScene;
+    public GameObject pauseMenu;
 
     private void Awake() {
         instance = this;
@@ -48,10 +49,16 @@ public class UIController : MonoBehaviour
     }
 
     public void NewGame() {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(newGameScene);
     }
 
     public void BackToMenu() {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuScene);
+    }
+
+    public void Resume() {
+        LevelManager.instance.PauseUnpause();
     }
 }
