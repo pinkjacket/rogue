@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator LevelEnd() {
         AudioManager.instance.PlayVictoryMusic();
+        PlayerController.instance.canMove = false;
         yield return new WaitForSeconds(transferDelay);
         SceneManager.LoadScene(nextLevelName);
     }

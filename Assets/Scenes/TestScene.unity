@@ -4855,7 +4855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferDelay: 3
-  nextLevelName: 
+  nextLevelName: TestDouble
 --- !u!1001 &829979899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7887,6 +7887,7 @@ MonoBehaviour:
   dashCoolOff: 1
   dashInvuln: 0.5
   dashCounter: 0
+  canMove: 1
 --- !u!50 &1507803864
 Rigidbody2D:
   serializedVersion: 4
