@@ -268,6 +268,12 @@ MonoBehaviour:
   endColor: {r: 0.7075472, g: 0.13683695, b: 0.13683695, a: 1}
   distanceToExit: 10
   generatorPoint: {fileID: 179509942}
+  mapDirection: 0
+  xOffset: 18
+  yOffset: 10
+  roomLayer:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!4 &1688875940
 Transform:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class LevelGenerator : MonoBehaviour
     public Direction mapDirection;
     public float xOffset = 18f;
     public float yOffset = 10f;
+    public LayerMask roomLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,9 @@ public class LevelGenerator : MonoBehaviour
             mapDirection = (Direction)Random.Range(0, 4);
             MoveGenPoint();
 
+            while (Physics2D.OverlapCircle(generatorPoint.position, .2f, roomLayer)) {
+                MoveGenPoint();
+            }
         }
     }
 
