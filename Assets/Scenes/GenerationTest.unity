@@ -305,6 +305,13 @@ MonoBehaviour:
       type: 3}
     exitAll: {fileID: 448121551505401837, guid: 66e86446c54b4ca4bb9c71d22f584beb,
       type: 3}
+  floorStart: {fileID: 8757501127204229887, guid: 9305a317ba6f4944a86765aa174258f1,
+    type: 3}
+  floorEnd: {fileID: 3848069272395229333, guid: 7a6a52769cc7bd84e8ed1dab29222712,
+    type: 3}
+  possibleFloors:
+  - {fileID: 4574415688768499937, guid: 8e2d469cf9cca4b4fbfe810f62c602f6, type: 3}
+  - {fileID: 8757501127204229887, guid: 9305a317ba6f4944a86765aa174258f1, type: 3}
 --- !u!4 &1688875940
 Transform:
   m_ObjectHideFlags: 0

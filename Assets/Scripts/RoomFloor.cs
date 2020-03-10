@@ -11,7 +11,9 @@ public class RoomFloor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (openOnEnemyClear) {
+            thisRoom.closeOnEnter = true;
+        }
     }
 
     // Update is called once per frame
