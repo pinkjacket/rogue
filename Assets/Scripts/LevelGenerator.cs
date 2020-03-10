@@ -16,6 +16,8 @@ public class LevelGenerator : MonoBehaviour
     public LayerMask roomLayer;
     private GameObject endRoom;
     private List<GameObject> layoutRoomObjects = new List<GameObject>();
+    public RoomPrefabs rooms;
+    private List<GameObject> generatedOutlines = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,12 @@ public class LevelGenerator : MonoBehaviour
 
 
         }
+        //create room outlines
+        CreateRoomOutline(Vector3.zero);
+        foreach(GameObject room in layoutRoomObjects) {
+            CreateRoomOutline(room.transform.position);
+        }
+        CreateRoomOutline(endRoom.transform.position);
     }
 
     // Update is called once per frame
@@ -69,4 +77,91 @@ public class LevelGenerator : MonoBehaviour
                 break;
         }
     }
+
+    public void CreateRoomOutline(Vector3 roomPosition) {
+        bool roomAbove = Physics2D.OverlapCircle(roomPosition + new Vector3(0f, yOffset, 0f), .2f, roomLayer);
+        bool roomBelow = Physics2D.OverlapCircle(roomPosition + new Vector3(0f, -yOffset, 0f), .2f, roomLayer);
+        bool roomRight = Physics2D.OverlapCircle(roomPosition + new Vector3(xOffset, 0f, 0f), .2f, roomLayer);
+        bool roomLeft = Physics2D.OverlapCircle(roomPosition + new Vector3(-xOffset, 0f, 0f), .2f, roomLayer);
+
+        int exitCount = 0;
+        if (roomAbove) {
+            exitCount++;
+        }
+        if (roomBelow) {
+            exitCount++;
+        }
+        if (roomLeft) {
+            exitCount++;
+        }
+        if (roomRight) {
+            exitCount++;
+        }
+
+        switch (exitCount) {
+            case 0:
+                Debug.LogError("No adjoining room! There is only the void.");
+                break;
+            case 1:
+                if (roomAbove) {
+                    generatedOutlines.Add(Instantiate(rooms.exitUp, roomPosition, transform.rotation));
+                }
+                if (roomBelow) {
+                    generatedOutlines.Add(Instantiate(rooms.exitDown, roomPosition, transform.rotation));
+                }
+                if (roomLeft) {
+                    generatedOutlines.Add(Instantiate(rooms.exitLeft, roomPosition, transform.rotation));
+                }
+                if (roomRight) {
+                    generatedOutlines.Add(Instantiate(rooms.exitRight, roomPosition, transform.rotation));
+                }
+                break;
+            case 2:
+                if (roomAbove && roomBelow) {
+                    generatedOutlines.Add(Instantiate(rooms.exitUD, roomPosition, transform.rotation));
+                }
+                if (roomAbove && roomLeft) {
+                    generatedOutlines.Add(Instantiate(rooms.exitUL, roomPosition, transform.rotation));
+                }
+                if (roomAbove && roomRight) {
+                    generatedOutlines.Add(Instantiate(rooms.exitUR, roomPosition, transform.rotation));
+                }
+                if (roomBelow && roomLeft) {
+                    generatedOutlines.Add(Instantiate(rooms.exitDL, roomPosition, transform.rotation));
+                }
+                if (roomBelow && roomRight) {
+                    generatedOutlines.Add(Instantiate(rooms.exitDR, roomPosition, transform.rotation));
+                }
+                if (roomLeft && roomRight) {
+                    generatedOutlines.Add(Instantiate(rooms.exitLR, roomPosition, transform.rotation));
+                }
+                break;
+            case 3:
+                if (roomAbove && roomBelow && roomRight) {
+                    generatedOutlines.Add(Instantiate(rooms.exitUDR, roomPosition, transform.rotation));
+                }
+                if (roomAbove && roomBelow && roomLeft) {
+                    generatedOutlines.Add(Instantiate(rooms.exitUDL, roomPosition, transform.rotation));
+                }
+                if (roomAbove && roomLeft && roomRight) {
+                    generatedOutlines.Add(Instantiate(rooms.exitULR, roomPosition, transform.rotation));
+                }
+                if (roomBelow && roomLeft && roomRight) {
+                    generatedOutlines.Add(Instantiate(rooms.exitDLR, roomPosition, transform.rotation));
+                }
+                break;
+            case 4:
+                if(roomAbove && roomBelow && roomLeft && roomRight) {
+                    generatedOutlines.Add(Instantiate(rooms.exitAll, roomPosition, transform.rotation));
+                }
+                break;
+        }
+    }
+}
+
+[System.Serializable]
+public class RoomPrefabs {
+    public GameObject exitUp, exitDown, exitLeft, exitRight,
+        exitUD, exitUR, exitUL, exitDR, exitDL, exitLR,
+        exitUDR, exitULR, exitUDL, exitDLR, exitAll;
 }
