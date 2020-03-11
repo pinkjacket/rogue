@@ -6,8 +6,13 @@ public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D enRB;
     public float moveSpeed;
+
+    public bool chasePlayer;
     public float attentionRange;
     private Vector3 moveDirection;
+    public bool runsAway;
+    public float fleeRange;
+
     public Animator anim;
     public int health = 150;
     public GameObject[] deathEffects;
@@ -30,12 +35,17 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         if(theBody.isVisible && PlayerController.instance.gameObject.activeInHierarchy){
-            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < attentionRange) {
+            moveDirection = Vector3.zero;
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < attentionRange && chasePlayer) {
                 moveDirection = PlayerController.instance.transform.position - transform.position;
             }
-            else {
-                moveDirection = Vector3.zero;
+
+            if(runsAway && Vector3.Distance(transform.position, PlayerController.instance.transform.position) < fleeRange) {
+                moveDirection = transform.position - PlayerController.instance.transform.position;
             }
+            /*else {
+                moveDirection = Vector3.zero;
+            }*/
             moveDirection.Normalize();
 
             enRB.velocity = moveDirection * moveSpeed;
