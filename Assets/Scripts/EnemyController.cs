@@ -12,6 +12,11 @@ public class EnemyController : MonoBehaviour
     private Vector3 moveDirection;
     public bool runsAway;
     public float fleeRange;
+    public bool wanderer;
+    public float wanderLength, pauseLength;
+    private float wanderCounter, pauseCounter;
+    private Vector3 wanderDirection;
+
 
     public Animator anim;
     public int health = 150;
@@ -28,7 +33,9 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (wanderer) {
+            pauseCounter = Random.Range(pauseLength * .75f, pauseLength * 1.25f);
+        }
     }
 
     // Update is called once per frame
@@ -39,10 +46,32 @@ public class EnemyController : MonoBehaviour
             if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < attentionRange && chasePlayer) {
                 moveDirection = PlayerController.instance.transform.position - transform.position;
             }
+            else {
+                if (wanderer) {
+                    if(wanderCounter > 0) {
+                        wanderCounter -= Time.deltaTime;
+                        //move enemy
+                        moveDirection = wanderDirection;
+
+                        if(wanderCounter <= 0) {
+                            pauseCounter = Random.Range(pauseLength * .75f, pauseLength * 1.25f);
+                        }
+                    }
+                    if(pauseCounter > 0) {
+                        pauseCounter -= Time.deltaTime;
+
+                        if(pauseCounter <= 0) {
+                            wanderCounter = Random.Range(wanderLength * .75f, wanderLength * 1.25f);
+                            wanderDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
+                        }
+                    }
+                }
+            }
 
             if(runsAway && Vector3.Distance(transform.position, PlayerController.instance.transform.position) < fleeRange) {
                 moveDirection = transform.position - PlayerController.instance.transform.position;
             }
+
             /*else {
                 moveDirection = Vector3.zero;
             }*/
