@@ -6,29 +6,37 @@ public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D enRB;
     public float moveSpeed;
-
+    [Header("Chase")]
     public bool chasePlayer;
     public float attentionRange;
     private Vector3 moveDirection;
+    [Header("Flee")]
     public bool runsAway;
     public float fleeRange;
+    [Header("Wanderer")]
     public bool wanderer;
     public float wanderLength, pauseLength;
     private float wanderCounter, pauseCounter;
     private Vector3 wanderDirection;
+    [Header("Patroller")]
+    public bool patroller;
+    public Transform[] patrolPoints;
+    private int currentPatrolPoint;
 
-
-    public Animator anim;
-    public int health = 150;
-    public GameObject[] deathEffects;
-    public GameObject hitEffect;
+    
+    [Header("Shoots")]
     public bool doesShoot;
     public GameObject bullet;
     public Transform firePoint;
     public float fireRate;
     private float fireCount;
-    public SpriteRenderer theBody;
     public float shootingRange;
+    [Header("Variables")]
+    public SpriteRenderer theBody;
+    public Animator anim;
+    public int health = 150;
+    public GameObject[] deathEffects;
+    public GameObject hitEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +71,15 @@ public class EnemyController : MonoBehaviour
                         if(pauseCounter <= 0) {
                             wanderCounter = Random.Range(wanderLength * .75f, wanderLength * 1.25f);
                             wanderDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
+                        }
+                    }
+                }
+                if (patroller) {
+                    moveDirection = patrolPoints[currentPatrolPoint].position - transform.position;
+                    if(Vector3.Distance(transform.position, patrolPoints[currentPatrolPoint].position) < .2f) {
+                        currentPatrolPoint++;
+                        if(currentPatrolPoint >= patrolPoints.Length) {
+                            currentPatrolPoint = 0;
                         }
                     }
                 }
