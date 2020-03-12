@@ -187,9 +187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enRB: {fileID: 2787359650523164760}
-  moveSpeed: 3
+  moveSpeed: 4
   chasePlayer: 1
-  attentionRange: 7
+  attentionRange: 4
   runsAway: 0
   fleeRange: 0
   wanderer: 0
